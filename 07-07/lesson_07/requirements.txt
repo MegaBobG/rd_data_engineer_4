@@ -1,0 +1,7 @@
+fastavro==1.4.9
+requests~=2.31.0
+pandas~=2.0.3
+aiohttp~=3.8.4
+typing~=3.7.4.3
+Flask~=2.2.5
+apache-airflow==2.6.3
