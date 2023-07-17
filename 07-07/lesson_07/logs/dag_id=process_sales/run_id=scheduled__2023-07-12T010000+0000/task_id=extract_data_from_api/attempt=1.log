@@ -1,0 +1,49 @@
+[2023-07-14T06:19:10.489+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: process_sales.extract_data_from_api scheduled__2023-07-12T01:00:00+00:00 [queued]>
+[2023-07-14T06:19:10.498+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: process_sales.extract_data_from_api scheduled__2023-07-12T01:00:00+00:00 [queued]>
+[2023-07-14T06:19:10.499+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 1
+[2023-07-14T06:19:10.514+0000] {taskinstance.py:1327} INFO - Executing <Task(PythonOperator): extract_data_from_api> on 2023-07-12 01:00:00+00:00
+[2023-07-14T06:19:10.518+0000] {standard_task_runner.py:57} INFO - Started process 5962 to run task
+[2023-07-14T06:19:10.522+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'process_sales', 'extract_data_from_api', 'scheduled__2023-07-12T01:00:00+00:00', '--job-id', '222', '--raw', '--subdir', 'DAGS_FOLDER/process_sales.py', '--cfg-path', '/tmp/tmpo8dszq2m']
+[2023-07-14T06:19:10.522+0000] {standard_task_runner.py:85} INFO - Job 222: Subtask extract_data_from_api
+[2023-07-14T06:19:10.567+0000] {task_command.py:410} INFO - Running <TaskInstance: process_sales.extract_data_from_api scheduled__2023-07-12T01:00:00+00:00 [running]> on host b58a2d5f4d18
+[2023-07-14T06:19:10.645+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='process_sales' AIRFLOW_CTX_TASK_ID='extract_data_from_api' AIRFLOW_CTX_EXECUTION_DATE='2023-07-12T01:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-07-12T01:00:00+00:00'
+[2023-07-14T06:19:10.910+0000] {logging_mixin.py:149} INFO - Page 1 started
+[2023-07-14T06:19:10.919+0000] {logging_mixin.py:149} INFO - Page 1 done
+[2023-07-14T06:19:10.920+0000] {logging_mixin.py:149} INFO - Status_code = 200
+[2023-07-14T06:19:11.083+0000] {logging_mixin.py:149} INFO - Page 2 started
+[2023-07-14T06:19:11.090+0000] {logging_mixin.py:149} INFO - Page 2 done
+[2023-07-14T06:19:11.090+0000] {logging_mixin.py:149} INFO - Status_code = 200
+[2023-07-14T06:19:11.252+0000] {logging_mixin.py:149} INFO - Page 3 started
+[2023-07-14T06:19:11.258+0000] {logging_mixin.py:149} INFO - Page 3 done
+[2023-07-14T06:19:11.258+0000] {logging_mixin.py:149} INFO - Status_code = 200
+[2023-07-14T06:19:11.421+0000] {logging_mixin.py:149} INFO - Page 4 started
+[2023-07-14T06:19:11.422+0000] {logging_mixin.py:149} INFO - Page 4 done
+[2023-07-14T06:19:11.423+0000] {logging_mixin.py:149} INFO - Status_code = 200
+[2023-07-14T06:19:11.950+0000] {logging_mixin.py:149} INFO - Page 1 started
+[2023-07-14T06:19:11.952+0000] {logging_mixin.py:149} INFO - Page 1 done
+[2023-07-14T06:19:11.952+0000] {logging_mixin.py:149} INFO - Status_code = 200
+[2023-07-14T06:19:12.117+0000] {logging_mixin.py:149} INFO - Page 2 started
+[2023-07-14T06:19:12.123+0000] {logging_mixin.py:149} INFO - Page 2 done
+[2023-07-14T06:19:12.124+0000] {logging_mixin.py:149} INFO - Status_code = 200
+[2023-07-14T06:19:12.287+0000] {logging_mixin.py:149} INFO - Page 3 started
+[2023-07-14T06:19:12.293+0000] {logging_mixin.py:149} INFO - Page 3 done
+[2023-07-14T06:19:12.293+0000] {logging_mixin.py:149} INFO - Status_code = 200
+[2023-07-14T06:19:12.458+0000] {logging_mixin.py:149} INFO - Page 4 started
+[2023-07-14T06:19:12.460+0000] {logging_mixin.py:149} INFO - Page 4 done
+[2023-07-14T06:19:12.460+0000] {logging_mixin.py:149} INFO - Status_code = 200
+[2023-07-14T06:19:12.883+0000] {logging_mixin.py:149} INFO - Page 1 started
+[2023-07-14T06:19:12.886+0000] {logging_mixin.py:149} INFO - Page 1 done
+[2023-07-14T06:19:12.887+0000] {logging_mixin.py:149} INFO - Status_code = 200
+[2023-07-14T06:19:13.205+0000] {logging_mixin.py:149} INFO - Page 2 started
+[2023-07-14T06:19:13.206+0000] {logging_mixin.py:149} INFO - Page 2 done
+[2023-07-14T06:19:13.207+0000] {logging_mixin.py:149} INFO - Status_code = 200
+[2023-07-14T06:19:13.395+0000] {logging_mixin.py:149} INFO - Page 3 started
+[2023-07-14T06:19:13.400+0000] {logging_mixin.py:149} INFO - Page 3 done
+[2023-07-14T06:19:13.401+0000] {logging_mixin.py:149} INFO - Status_code = 200
+[2023-07-14T06:19:13.569+0000] {logging_mixin.py:149} INFO - Page 4 started
+[2023-07-14T06:19:13.570+0000] {logging_mixin.py:149} INFO - Page 4 done
+[2023-07-14T06:19:13.571+0000] {logging_mixin.py:149} INFO - Status_code = 200
+[2023-07-14T06:19:13.744+0000] {python.py:183} INFO - Done. Returned value was: None
+[2023-07-14T06:19:13.753+0000] {taskinstance.py:1350} INFO - Marking task as SUCCESS. dag_id=process_sales, task_id=extract_data_from_api, execution_date=20230712T010000, start_date=20230714T061910, end_date=20230714T061913
+[2023-07-14T06:19:13.791+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 0
+[2023-07-14T06:19:13.814+0000] {taskinstance.py:2653} INFO - 1 downstream tasks scheduled from follow-on schedule check

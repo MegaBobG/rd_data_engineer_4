@@ -1,0 +1,16 @@
+[2023-07-12T13:55:32.397+0000] {taskinstance.py:1097} INFO - Dependencies not met for <TaskInstance: process_sales_10.extract_data_from_api_2 manual__2023-07-12T13:42:46.884167+00:00 [failed]>, dependency 'Task Instance State' FAILED: Task is in the 'failed' state.
+[2023-07-12T13:55:32.400+0000] {local_task_job_runner.py:154} INFO - Task is not able to be run
+[2023-07-12T13:57:04.806+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: process_sales_10.extract_data_from_api_2 manual__2023-07-12T13:42:46.884167+00:00 [queued]>
+[2023-07-12T13:57:04.814+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: process_sales_10.extract_data_from_api_2 manual__2023-07-12T13:42:46.884167+00:00 [queued]>
+[2023-07-12T13:57:04.815+0000] {taskinstance.py:1308} INFO - Starting attempt 3 of 3
+[2023-07-12T13:57:04.835+0000] {taskinstance.py:1327} INFO - Executing <Task(PythonOperator): extract_data_from_api_2> on 2023-07-12 13:42:46.884167+00:00
+[2023-07-12T13:57:04.840+0000] {standard_task_runner.py:57} INFO - Started process 805 to run task
+[2023-07-12T13:57:04.844+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'process_sales_10', 'extract_data_from_api_2', 'manual__2023-07-12T13:42:46.884167+00:00', '--job-id', '102', '--raw', '--subdir', 'DAGS_FOLDER/process_sales_10.py', '--cfg-path', '/tmp/tmpstug6wrs']
+[2023-07-12T13:57:04.845+0000] {standard_task_runner.py:85} INFO - Job 102: Subtask extract_data_from_api_2
+[2023-07-12T13:57:04.898+0000] {task_command.py:410} INFO - Running <TaskInstance: process_sales_10.extract_data_from_api_2 manual__2023-07-12T13:42:46.884167+00:00 [running]> on host b58a2d5f4d18
+[2023-07-12T13:57:04.997+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='process_sales_10' AIRFLOW_CTX_TASK_ID='extract_data_from_api_2' AIRFLOW_CTX_EXECUTION_DATE='2023-07-12T13:42:46.884167+00:00' AIRFLOW_CTX_TRY_NUMBER='3' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-07-12T13:42:46.884167+00:00'
+[2023-07-12T13:57:05.026+0000] {logging_mixin.py:149} INFO - Конвертация завершена!
+[2023-07-12T13:57:05.027+0000] {python.py:183} INFO - Done. Returned value was: None
+[2023-07-12T13:57:05.046+0000] {taskinstance.py:1350} INFO - Marking task as SUCCESS. dag_id=process_sales_10, task_id=extract_data_from_api_2, execution_date=20230712T134246, start_date=20230712T135704, end_date=20230712T135705
+[2023-07-12T13:57:05.099+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 0
+[2023-07-12T13:57:05.129+0000] {taskinstance.py:2653} INFO - 0 downstream tasks scheduled from follow-on schedule check

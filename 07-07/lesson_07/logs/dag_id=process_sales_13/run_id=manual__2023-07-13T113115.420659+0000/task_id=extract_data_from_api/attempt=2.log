@@ -1,0 +1,26 @@
+[2023-07-13T11:36:38.819+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: process_sales_13.extract_data_from_api manual__2023-07-13T11:31:15.420659+00:00 [queued]>
+[2023-07-13T11:36:38.827+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: process_sales_13.extract_data_from_api manual__2023-07-13T11:31:15.420659+00:00 [queued]>
+[2023-07-13T11:36:38.828+0000] {taskinstance.py:1308} INFO - Starting attempt 2 of 2
+[2023-07-13T11:36:38.841+0000] {taskinstance.py:1327} INFO - Executing <Task(PythonOperator): extract_data_from_api> on 2023-07-13 11:31:15.420659+00:00
+[2023-07-13T11:36:38.845+0000] {standard_task_runner.py:57} INFO - Started process 2461 to run task
+[2023-07-13T11:36:38.848+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'process_sales_13', 'extract_data_from_api', 'manual__2023-07-13T11:31:15.420659+00:00', '--job-id', '126', '--raw', '--subdir', 'DAGS_FOLDER/process_sales_13.py', '--cfg-path', '/tmp/tmpeni4n784']
+[2023-07-13T11:36:38.850+0000] {standard_task_runner.py:85} INFO - Job 126: Subtask extract_data_from_api
+[2023-07-13T11:36:38.895+0000] {task_command.py:410} INFO - Running <TaskInstance: process_sales_13.extract_data_from_api manual__2023-07-13T11:31:15.420659+00:00 [running]> on host b58a2d5f4d18
+[2023-07-13T11:36:38.970+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='process_sales_13' AIRFLOW_CTX_TASK_ID='extract_data_from_api' AIRFLOW_CTX_EXECUTION_DATE='2023-07-13T11:31:15.420659+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-07-13T11:31:15.420659+00:00'
+[2023-07-13T11:36:38.973+0000] {taskinstance.py:1824} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 181, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 198, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/process_sales_13.py", line 37, in extract_data_from_api_task
+    raw_dir = os.path.join(RAW_DIR_2, date_str)
+  File "/usr/local/lib/python3.7/posixpath.py", line 94, in join
+    genericpath._check_arg_types('join', a, *p)
+  File "/usr/local/lib/python3.7/genericpath.py", line 153, in _check_arg_types
+    (funcname, s.__class__.__name__)) from None
+TypeError: join() argument must be str or bytes, not 'list'
+[2023-07-13T11:36:38.985+0000] {taskinstance.py:1350} INFO - Marking task as FAILED. dag_id=process_sales_13, task_id=extract_data_from_api, execution_date=20230713T113115, start_date=20230713T113638, end_date=20230713T113638
+[2023-07-13T11:36:38.997+0000] {standard_task_runner.py:109} ERROR - Failed to execute job 126 for task extract_data_from_api (join() argument must be str or bytes, not 'list'; 2461)
+[2023-07-13T11:36:39.021+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 1
+[2023-07-13T11:36:39.041+0000] {taskinstance.py:2653} INFO - 0 downstream tasks scheduled from follow-on schedule check

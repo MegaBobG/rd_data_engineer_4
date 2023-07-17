@@ -1,0 +1,22 @@
+[2023-07-09T19:36:53.684+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Lecture_DAG.branch manual__2023-07-09T19:36:48.137446+00:00 [queued]>
+[2023-07-09T19:36:53.695+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Lecture_DAG.branch manual__2023-07-09T19:36:48.137446+00:00 [queued]>
+[2023-07-09T19:36:53.696+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 1
+[2023-07-09T19:36:53.711+0000] {taskinstance.py:1327} INFO - Executing <Task(RateBranchOperator): branch> on 2023-07-09 19:36:48.137446+00:00
+[2023-07-09T19:36:53.716+0000] {standard_task_runner.py:57} INFO - Started process 718 to run task
+[2023-07-09T19:36:53.719+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'Lecture_DAG', 'branch', 'manual__2023-07-09T19:36:48.137446+00:00', '--job-id', '15', '--raw', '--subdir', 'DAGS_FOLDER/lecture_code.py', '--cfg-path', '/tmp/tmpz70xt_mu']
+[2023-07-09T19:36:53.722+0000] {standard_task_runner.py:85} INFO - Job 15: Subtask branch
+[2023-07-09T19:36:53.769+0000] {task_command.py:410} INFO - Running <TaskInstance: Lecture_DAG.branch manual__2023-07-09T19:36:48.137446+00:00 [running]> on host bc27030ccba5
+[2023-07-09T19:36:53.849+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='Lecture_DAG' AIRFLOW_CTX_TASK_ID='branch' AIRFLOW_CTX_EXECUTION_DATE='2023-07-09T19:36:48.137446+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-07-09T19:36:48.137446+00:00'
+[2023-07-09T19:36:53.870+0000] {taskinstance.py:1824} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/branch.py", line 54, in execute
+    branches_to_execute = self.choose_branch(context)
+  File "/opt/airflow/dags/lecture_code.py", line 19, in choose_branch
+    previous_rate = Variable.get(key='previous_rate')
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/variable.py", line 142, in get
+    raise KeyError(f"Variable {key} does not exist")
+KeyError: 'Variable previous_rate does not exist'
+[2023-07-09T19:36:53.883+0000] {taskinstance.py:1350} INFO - Marking task as FAILED. dag_id=Lecture_DAG, task_id=branch, execution_date=20230709T193648, start_date=20230709T193653, end_date=20230709T193653
+[2023-07-09T19:36:53.895+0000] {standard_task_runner.py:109} ERROR - Failed to execute job 15 for task branch ('Variable previous_rate does not exist'; 718)
+[2023-07-09T19:36:53.932+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 1
+[2023-07-09T19:36:53.963+0000] {taskinstance.py:2653} INFO - 0 downstream tasks scheduled from follow-on schedule check

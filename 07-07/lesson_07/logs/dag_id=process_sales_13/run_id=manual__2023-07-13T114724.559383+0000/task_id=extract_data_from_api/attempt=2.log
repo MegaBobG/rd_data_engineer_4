@@ -1,0 +1,58 @@
+[2023-07-13T11:55:04.372+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: process_sales_13.extract_data_from_api manual__2023-07-13T11:47:24.559383+00:00 [queued]>
+[2023-07-13T11:55:04.383+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: process_sales_13.extract_data_from_api manual__2023-07-13T11:47:24.559383+00:00 [queued]>
+[2023-07-13T11:55:04.384+0000] {taskinstance.py:1308} INFO - Starting attempt 2 of 2
+[2023-07-13T11:55:04.399+0000] {taskinstance.py:1327} INFO - Executing <Task(PythonOperator): extract_data_from_api> on 2023-07-13 11:47:24.559383+00:00
+[2023-07-13T11:55:04.404+0000] {standard_task_runner.py:57} INFO - Started process 2835 to run task
+[2023-07-13T11:55:04.407+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'process_sales_13', 'extract_data_from_api', 'manual__2023-07-13T11:47:24.559383+00:00', '--job-id', '138', '--raw', '--subdir', 'DAGS_FOLDER/process_sales_13.py', '--cfg-path', '/tmp/tmpyzsvtsfj']
+[2023-07-13T11:55:04.408+0000] {standard_task_runner.py:85} INFO - Job 138: Subtask extract_data_from_api
+[2023-07-13T11:55:04.463+0000] {task_command.py:410} INFO - Running <TaskInstance: process_sales_13.extract_data_from_api manual__2023-07-13T11:47:24.559383+00:00 [running]> on host b58a2d5f4d18
+[2023-07-13T11:55:04.558+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='process_sales_13' AIRFLOW_CTX_TASK_ID='extract_data_from_api' AIRFLOW_CTX_EXECUTION_DATE='2023-07-13T11:47:24.559383+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-07-13T11:47:24.559383+00:00'
+[2023-07-13T11:55:04.561+0000] {logging_mixin.py:149} INFO - 	I'm in get_sales(...) function!
+[2023-07-13T11:55:04.812+0000] {logging_mixin.py:149} INFO - Page 1 started
+[2023-07-13T11:55:04.813+0000] {logging_mixin.py:149} INFO - Page 1 done
+[2023-07-13T11:55:04.814+0000] {logging_mixin.py:149} INFO - Status_code = 200
+[2023-07-13T11:55:04.976+0000] {logging_mixin.py:149} INFO - Page 2 started
+[2023-07-13T11:55:04.977+0000] {logging_mixin.py:149} INFO - Page 2 done
+[2023-07-13T11:55:04.977+0000] {logging_mixin.py:149} INFO - Status_code = 200
+[2023-07-13T11:55:05.138+0000] {logging_mixin.py:149} INFO - Page 3 started
+[2023-07-13T11:55:05.150+0000] {logging_mixin.py:149} INFO - Page 3 done
+[2023-07-13T11:55:05.151+0000] {logging_mixin.py:149} INFO - Status_code = 200
+[2023-07-13T11:55:05.312+0000] {logging_mixin.py:149} INFO - Page 4 started
+[2023-07-13T11:55:05.313+0000] {logging_mixin.py:149} INFO - Page 4 done
+[2023-07-13T11:55:05.314+0000] {logging_mixin.py:149} INFO - Status_code = 200
+[2023-07-13T11:55:05.498+0000] {logging_mixin.py:149} INFO - Deleted file: /opt/***/processed_data/raw/sales/sales
+[2023-07-13T11:55:05.499+0000] {logging_mixin.py:149} INFO - Cleanup complete for folder: /opt/***/processed_data/raw/sales/sales
+[2023-07-13T11:55:05.504+0000] {logging_mixin.py:149} INFO - 	I'm in get_sales(...) function!
+[2023-07-13T11:55:05.745+0000] {logging_mixin.py:149} INFO - Page 1 started
+[2023-07-13T11:55:05.750+0000] {logging_mixin.py:149} INFO - Page 1 done
+[2023-07-13T11:55:05.750+0000] {logging_mixin.py:149} INFO - Status_code = 200
+[2023-07-13T11:55:05.911+0000] {logging_mixin.py:149} INFO - Page 2 started
+[2023-07-13T11:55:05.915+0000] {logging_mixin.py:149} INFO - Page 2 done
+[2023-07-13T11:55:05.916+0000] {logging_mixin.py:149} INFO - Status_code = 200
+[2023-07-13T11:55:06.092+0000] {logging_mixin.py:149} INFO - Page 3 started
+[2023-07-13T11:55:06.097+0000] {logging_mixin.py:149} INFO - Page 3 done
+[2023-07-13T11:55:06.098+0000] {logging_mixin.py:149} INFO - Status_code = 200
+[2023-07-13T11:55:06.257+0000] {logging_mixin.py:149} INFO - Page 4 started
+[2023-07-13T11:55:06.261+0000] {logging_mixin.py:149} INFO - Page 4 done
+[2023-07-13T11:55:06.262+0000] {logging_mixin.py:149} INFO - Status_code = 200
+[2023-07-13T11:55:06.433+0000] {logging_mixin.py:149} INFO - Deleted file: /opt/***/processed_data/raw/sales/sales
+[2023-07-13T11:55:06.434+0000] {logging_mixin.py:149} INFO - Cleanup complete for folder: /opt/***/processed_data/raw/sales/sales
+[2023-07-13T11:55:06.438+0000] {logging_mixin.py:149} INFO - 	I'm in get_sales(...) function!
+[2023-07-13T11:55:06.700+0000] {logging_mixin.py:149} INFO - Page 1 started
+[2023-07-13T11:55:06.701+0000] {logging_mixin.py:149} INFO - Page 1 done
+[2023-07-13T11:55:06.702+0000] {logging_mixin.py:149} INFO - Status_code = 200
+[2023-07-13T11:55:06.860+0000] {logging_mixin.py:149} INFO - Page 2 started
+[2023-07-13T11:55:06.864+0000] {logging_mixin.py:149} INFO - Page 2 done
+[2023-07-13T11:55:06.864+0000] {logging_mixin.py:149} INFO - Status_code = 200
+[2023-07-13T11:55:07.022+0000] {logging_mixin.py:149} INFO - Page 3 started
+[2023-07-13T11:55:07.027+0000] {logging_mixin.py:149} INFO - Page 3 done
+[2023-07-13T11:55:07.027+0000] {logging_mixin.py:149} INFO - Status_code = 200
+[2023-07-13T11:55:07.185+0000] {logging_mixin.py:149} INFO - Page 4 started
+[2023-07-13T11:55:07.187+0000] {logging_mixin.py:149} INFO - Page 4 done
+[2023-07-13T11:55:07.187+0000] {logging_mixin.py:149} INFO - Status_code = 200
+[2023-07-13T11:55:07.357+0000] {logging_mixin.py:149} INFO - Deleted file: /opt/***/processed_data/raw/sales/sales
+[2023-07-13T11:55:07.357+0000] {logging_mixin.py:149} INFO - Cleanup complete for folder: /opt/***/processed_data/raw/sales/sales
+[2023-07-13T11:55:07.361+0000] {python.py:183} INFO - Done. Returned value was: None
+[2023-07-13T11:55:07.370+0000] {taskinstance.py:1350} INFO - Marking task as SUCCESS. dag_id=process_sales_13, task_id=extract_data_from_api, execution_date=20230713T114724, start_date=20230713T115504, end_date=20230713T115507
+[2023-07-13T11:55:07.392+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 0
+[2023-07-13T11:55:07.414+0000] {taskinstance.py:2653} INFO - 1 downstream tasks scheduled from follow-on schedule check

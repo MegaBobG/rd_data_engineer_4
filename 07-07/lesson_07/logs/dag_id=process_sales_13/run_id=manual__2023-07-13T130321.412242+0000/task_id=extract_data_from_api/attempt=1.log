@@ -1,0 +1,22 @@
+[2023-07-13T13:03:23.148+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: process_sales_13.extract_data_from_api manual__2023-07-13T13:03:21.412242+00:00 [queued]>
+[2023-07-13T13:03:23.157+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: process_sales_13.extract_data_from_api manual__2023-07-13T13:03:21.412242+00:00 [queued]>
+[2023-07-13T13:03:23.158+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 1
+[2023-07-13T13:03:23.171+0000] {taskinstance.py:1327} INFO - Executing <Task(PythonOperator): extract_data_from_api> on 2023-07-13 13:03:21.412242+00:00
+[2023-07-13T13:03:23.175+0000] {standard_task_runner.py:57} INFO - Started process 4227 to run task
+[2023-07-13T13:03:23.178+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'process_sales_13', 'extract_data_from_api', 'manual__2023-07-13T13:03:21.412242+00:00', '--job-id', '186', '--raw', '--subdir', 'DAGS_FOLDER/process_sales_13.py', '--cfg-path', '/tmp/tmp1lxrojg3']
+[2023-07-13T13:03:23.179+0000] {standard_task_runner.py:85} INFO - Job 186: Subtask extract_data_from_api
+[2023-07-13T13:03:23.224+0000] {task_command.py:410} INFO - Running <TaskInstance: process_sales_13.extract_data_from_api manual__2023-07-13T13:03:21.412242+00:00 [running]> on host b58a2d5f4d18
+[2023-07-13T13:03:23.310+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='process_sales_13' AIRFLOW_CTX_TASK_ID='extract_data_from_api' AIRFLOW_CTX_EXECUTION_DATE='2023-07-13T13:03:21.412242+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-07-13T13:03:21.412242+00:00'
+[2023-07-13T13:03:23.313+0000] {taskinstance.py:1824} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 179, in execute
+    self.op_kwargs = self.determine_kwargs(context)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 190, in determine_kwargs
+    return KeywordParameters.determine(self.python_callable, self.op_args, context).unpacking()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/utils/operator_helpers.py", line 161, in determine
+    raise ValueError(f"The key {name!r} in args is a part of kwargs and therefore reserved.")
+ValueError: The key 'ds' in args is a part of kwargs and therefore reserved.
+[2023-07-13T13:03:23.321+0000] {taskinstance.py:1350} INFO - Marking task as FAILED. dag_id=process_sales_13, task_id=extract_data_from_api, execution_date=20230713T130321, start_date=20230713T130323, end_date=20230713T130323
+[2023-07-13T13:03:23.335+0000] {standard_task_runner.py:109} ERROR - Failed to execute job 186 for task extract_data_from_api (The key 'ds' in args is a part of kwargs and therefore reserved.; 4227)
+[2023-07-13T13:03:23.351+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 1
+[2023-07-13T13:03:23.375+0000] {taskinstance.py:2653} INFO - 0 downstream tasks scheduled from follow-on schedule check
