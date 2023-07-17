@@ -1,0 +1,57 @@
+[2023-07-14T06:05:03.664+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: process_sales_13.extract_data_from_api scheduled__2023-07-13T01:00:00+00:00 [queued]>
+[2023-07-14T06:05:03.677+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: process_sales_13.extract_data_from_api scheduled__2023-07-13T01:00:00+00:00 [queued]>
+[2023-07-14T06:05:03.678+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 1
+[2023-07-14T06:05:03.697+0000] {taskinstance.py:1327} INFO - Executing <Task(PythonOperator): extract_data_from_api> on 2023-07-13 01:00:00+00:00
+[2023-07-14T06:05:03.704+0000] {standard_task_runner.py:57} INFO - Started process 5696 to run task
+[2023-07-14T06:05:03.709+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'process_sales_13', 'extract_data_from_api', 'scheduled__2023-07-13T01:00:00+00:00', '--job-id', '217', '--raw', '--subdir', 'DAGS_FOLDER/process_sales_13.py', '--cfg-path', '/tmp/tmp09l0r1tu']
+[2023-07-14T06:05:03.710+0000] {standard_task_runner.py:85} INFO - Job 217: Subtask extract_data_from_api
+[2023-07-14T06:05:03.775+0000] {task_command.py:410} INFO - Running <TaskInstance: process_sales_13.extract_data_from_api scheduled__2023-07-13T01:00:00+00:00 [running]> on host b58a2d5f4d18
+[2023-07-14T06:05:03.961+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='process_sales_13' AIRFLOW_CTX_TASK_ID='extract_data_from_api' AIRFLOW_CTX_EXECUTION_DATE='2023-07-13T01:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-07-13T01:00:00+00:00'
+[2023-07-14T06:05:03.980+0000] {taskinstance.py:1824} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/aiohttp/connector.py", line 1152, in _create_direct_connection
+    hosts = await asyncio.shield(host_resolved)
+  File "/home/airflow/.local/lib/python3.7/site-packages/aiohttp/connector.py", line 874, in _resolve_host
+    addrs = await self._resolver.resolve(host, port, family=self._family)
+  File "/home/airflow/.local/lib/python3.7/site-packages/aiohttp/resolver.py", line 38, in resolve
+    flags=socket.AI_ADDRCONFIG,
+  File "/usr/local/lib/python3.7/asyncio/base_events.py", line 792, in getaddrinfo
+    None, getaddr_func, host, port, family, type, proto, flags)
+  File "/usr/local/lib/python3.7/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/usr/local/lib/python3.7/socket.py", line 752, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -2] Name or service not known
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 181, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 198, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/process_sales_13.py", line 44, in extract_data_from_api_task
+    save_sales_to_local_disk(date=date_str, file_path=file_path)
+  File "/opt/airflow/dags/ht_template/job1/bll/sales_api.py", line 30, in save_sales_to_local_disk
+    json_content = asyncio.run(sales_api.get_sales(date=date))
+  File "/usr/local/lib/python3.7/asyncio/runners.py", line 43, in run
+    return loop.run_until_complete(main)
+  File "/usr/local/lib/python3.7/asyncio/base_events.py", line 587, in run_until_complete
+    return future.result()
+  File "/opt/airflow/dags/ht_template/job1/dal/sales_api.py", line 59, in get_sales
+    data = await fetch_page_data(session, get_url, headers, params, page)
+  File "/opt/airflow/dags/ht_template/job1/dal/sales_api.py", line 40, in fetch_page_data
+    response = await session.get(url=url, headers=headers, params=params)
+  File "/home/airflow/.local/lib/python3.7/site-packages/aiohttp/client.py", line 537, in _request
+    req, traces=traces, timeout=real_timeout
+  File "/home/airflow/.local/lib/python3.7/site-packages/aiohttp/connector.py", line 540, in connect
+    proto = await self._create_connection(req, traces, timeout)
+  File "/home/airflow/.local/lib/python3.7/site-packages/aiohttp/connector.py", line 901, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+  File "/home/airflow/.local/lib/python3.7/site-packages/aiohttp/connector.py", line 1166, in _create_direct_connection
+    raise ClientConnectorError(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host fake-api-vycpfa6oca-uc.a.run.app:443 ssl:default [Name or service not known]
+[2023-07-14T06:05:04.060+0000] {taskinstance.py:1350} INFO - Marking task as FAILED. dag_id=process_sales_13, task_id=extract_data_from_api, execution_date=20230713T010000, start_date=20230714T060503, end_date=20230714T060504
+[2023-07-14T06:05:04.093+0000] {standard_task_runner.py:109} ERROR - Failed to execute job 217 for task extract_data_from_api (Cannot connect to host fake-api-vycpfa6oca-uc.a.run.app:443 ssl:default [Name or service not known]; 5696)
+[2023-07-14T06:05:04.123+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 1
+[2023-07-14T06:05:04.156+0000] {taskinstance.py:2653} INFO - 0 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,17 @@
+[2023-07-09T19:40:29.082+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Lecture_DAG.bash_task manual__2023-07-09T19:36:48.137446+00:00 [queued]>
+[2023-07-09T19:40:29.092+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Lecture_DAG.bash_task manual__2023-07-09T19:36:48.137446+00:00 [queued]>
+[2023-07-09T19:40:29.092+0000] {taskinstance.py:1308} INFO - Starting attempt 2 of 2
+[2023-07-09T19:40:29.107+0000] {taskinstance.py:1327} INFO - Executing <Task(BashOperator): bash_task> on 2023-07-09 19:36:48.137446+00:00
+[2023-07-09T19:40:29.111+0000] {standard_task_runner.py:57} INFO - Started process 775 to run task
+[2023-07-09T19:40:29.115+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'Lecture_DAG', 'bash_task', 'manual__2023-07-09T19:36:48.137446+00:00', '--job-id', '16', '--raw', '--subdir', 'DAGS_FOLDER/lecture_code.py', '--cfg-path', '/tmp/tmp42ky0x8e']
+[2023-07-09T19:40:29.117+0000] {standard_task_runner.py:85} INFO - Job 16: Subtask bash_task
+[2023-07-09T19:40:29.169+0000] {task_command.py:410} INFO - Running <TaskInstance: Lecture_DAG.bash_task manual__2023-07-09T19:36:48.137446+00:00 [running]> on host bc27030ccba5
+[2023-07-09T19:40:29.244+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='Lecture_DAG' AIRFLOW_CTX_TASK_ID='bash_task' AIRFLOW_CTX_EXECUTION_DATE='2023-07-09T19:36:48.137446+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-07-09T19:36:48.137446+00:00'
+[2023-07-09T19:40:29.246+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2023-07-09T19:40:29.247+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'echo "Hello World!"']
+[2023-07-09T19:40:29.256+0000] {subprocess.py:86} INFO - Output:
+[2023-07-09T19:40:29.258+0000] {subprocess.py:93} INFO - Hello World!
+[2023-07-09T19:40:29.258+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2023-07-09T19:40:29.283+0000] {taskinstance.py:1350} INFO - Marking task as SUCCESS. dag_id=Lecture_DAG, task_id=bash_task, execution_date=20230709T193648, start_date=20230709T194029, end_date=20230709T194029
+[2023-07-09T19:40:29.327+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 0
+[2023-07-09T19:40:29.359+0000] {taskinstance.py:2653} INFO - 1 downstream tasks scheduled from follow-on schedule check

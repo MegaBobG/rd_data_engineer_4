@@ -1,0 +1,15 @@
+[2023-07-09T19:40:46.027+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Lecture_DAG.branch manual__2023-07-09T19:40:42.008188+00:00 [queued]>
+[2023-07-09T19:40:46.036+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Lecture_DAG.branch manual__2023-07-09T19:40:42.008188+00:00 [queued]>
+[2023-07-09T19:40:46.037+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 1
+[2023-07-09T19:40:46.051+0000] {taskinstance.py:1327} INFO - Executing <Task(RateBranchOperator): branch> on 2023-07-09 19:40:42.008188+00:00
+[2023-07-09T19:40:46.055+0000] {standard_task_runner.py:57} INFO - Started process 801 to run task
+[2023-07-09T19:40:46.058+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'Lecture_DAG', 'branch', 'manual__2023-07-09T19:40:42.008188+00:00', '--job-id', '21', '--raw', '--subdir', 'DAGS_FOLDER/lecture_code.py', '--cfg-path', '/tmp/tmppr8c785_']
+[2023-07-09T19:40:46.060+0000] {standard_task_runner.py:85} INFO - Job 21: Subtask branch
+[2023-07-09T19:40:46.105+0000] {task_command.py:410} INFO - Running <TaskInstance: Lecture_DAG.branch manual__2023-07-09T19:40:42.008188+00:00 [running]> on host bc27030ccba5
+[2023-07-09T19:40:46.201+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='Lecture_DAG' AIRFLOW_CTX_TASK_ID='branch' AIRFLOW_CTX_EXECUTION_DATE='2023-07-09T19:40:42.008188+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-07-09T19:40:42.008188+00:00'
+[2023-07-09T19:40:46.229+0000] {crypto.py:83} WARNING - empty cryptography key - values will not be stored encrypted.
+[2023-07-09T19:40:46.233+0000] {skipmixin.py:164} INFO - Following branch go_down
+[2023-07-09T19:40:46.234+0000] {skipmixin.py:224} INFO - Skipping tasks ['go_up']
+[2023-07-09T19:40:46.279+0000] {taskinstance.py:1350} INFO - Marking task as SUCCESS. dag_id=Lecture_DAG, task_id=branch, execution_date=20230709T194042, start_date=20230709T194046, end_date=20230709T194046
+[2023-07-09T19:40:46.310+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 0
+[2023-07-09T19:40:46.336+0000] {taskinstance.py:2653} INFO - 0 downstream tasks scheduled from follow-on schedule check

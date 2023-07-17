@@ -1,0 +1,22 @@
+[2023-07-12T13:55:29.850+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: process_sales_10.extract_data_from_api_2 manual__2023-07-12T13:42:46.884167+00:00 [queued]>
+[2023-07-12T13:55:29.859+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: process_sales_10.extract_data_from_api_2 manual__2023-07-12T13:42:46.884167+00:00 [queued]>
+[2023-07-12T13:55:29.860+0000] {taskinstance.py:1308} INFO - Starting attempt 2 of 2
+[2023-07-12T13:55:29.875+0000] {taskinstance.py:1327} INFO - Executing <Task(PythonOperator): extract_data_from_api_2> on 2023-07-12 13:42:46.884167+00:00
+[2023-07-12T13:55:29.880+0000] {standard_task_runner.py:57} INFO - Started process 769 to run task
+[2023-07-12T13:55:29.883+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'process_sales_10', 'extract_data_from_api_2', 'manual__2023-07-12T13:42:46.884167+00:00', '--job-id', '99', '--raw', '--subdir', 'DAGS_FOLDER/process_sales_10.py', '--cfg-path', '/tmp/tmptt6okmx_']
+[2023-07-12T13:55:29.884+0000] {standard_task_runner.py:85} INFO - Job 99: Subtask extract_data_from_api_2
+[2023-07-12T13:55:29.928+0000] {task_command.py:410} INFO - Running <TaskInstance: process_sales_10.extract_data_from_api_2 manual__2023-07-12T13:42:46.884167+00:00 [running]> on host b58a2d5f4d18
+[2023-07-12T13:55:30.007+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='process_sales_10' AIRFLOW_CTX_TASK_ID='extract_data_from_api_2' AIRFLOW_CTX_EXECUTION_DATE='2023-07-12T13:42:46.884167+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-07-12T13:42:46.884167+00:00'
+[2023-07-12T13:55:30.010+0000] {taskinstance.py:1824} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 181, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 198, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/process_sales_10.py", line 33, in json_to_csv
+    with open(csv_file_path, 'w', newline='') as csv_file:
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\a.golovko\\PycharmProjects\\rd_data_engineer\\lesson_07/processed_data/stg/sales/2022-08-09/sales_2022-08-09.csv'
+[2023-07-12T13:55:30.023+0000] {taskinstance.py:1350} INFO - Marking task as FAILED. dag_id=process_sales_10, task_id=extract_data_from_api_2, execution_date=20230712T134246, start_date=20230712T135529, end_date=20230712T135530
+[2023-07-12T13:55:30.035+0000] {standard_task_runner.py:109} ERROR - Failed to execute job 99 for task extract_data_from_api_2 ([Errno 2] No such file or directory: 'C:\\Users\\a.golovko\\PycharmProjects\\rd_data_engineer\\lesson_07/processed_data/stg/sales/2022-08-09/sales_2022-08-09.csv'; 769)
+[2023-07-12T13:55:30.056+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 1
+[2023-07-12T13:55:30.072+0000] {taskinstance.py:2653} INFO - 0 downstream tasks scheduled from follow-on schedule check
